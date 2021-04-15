@@ -1,0 +1,903 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>MOMO/s</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+  /*body design*/
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background-color:whitesmoke;
+}
+
+/* nav bar design */
+.topnav {
+  overflow: hidden;
+  background-color:orangered;
+  position:fixed;
+  top:0;
+  z-index:9999;
+  width:100%;
+}
+
+.new,.cont,.about{
+  float: right;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+.cart{
+  position:relative;
+  float:right;
+  text-align:center;
+  width:35px;
+  height:35px;
+  top:4px;
+  cursor:pointer;
+  padding:3px;
+}
+.cart:hover{
+  background-color:black;
+}
+
+
+.topnav a.active{
+    top:13px;
+    position:relative;
+}
+
+.active{
+    top:12px;
+    padding:14px 16px;
+    font-size:17px;
+    text-decoration:none;
+    color:white;
+}
+
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+.topnav .icon {
+  display: none;
+  color:white;
+  padding:10px;
+  text-decoration:none;
+}
+
+/*nav bar screen size manangement */
+@media screen and (max-width: 600px) {
+  .topnav a:not(:first-child) {
+    display: none;
+  }
+  .topnav a.icon {
+    float: right;
+    display: block;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .topnav.respo {
+    position: relative;
+  }
+  .topnav.respo .icon {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+  .topnav.respo a {
+    float: none;
+    display: block;
+    text-align: left;
+    padding:20px;
+  }
+  .topnav a:hover{
+      background-color:white;
+  }
+}
+
+/*search box design*/
+.find{
+    position:relative;
+    width:130px;
+    box-sizing:border-box;
+    border:2px solid #ccc;
+    border-radius:4px;
+    font-size:16px;
+    background-color:white;
+    background-position:10px 10px;
+    padding:5px 10px 5px 10px;
+    top:7px;
+    -webkit-transition:width 0.4s ease-in-out;
+    transition:width 1s ease-in-out;
+}
+
+input[type=text]:focus{
+    width:50%;
+}
+
+.SearchIcon{
+  width:30px;
+  height:30px;
+  position:absolute;
+  bottom:0px;
+  padding:10px;
+  cursor:pointer;
+  overflow:hidden;
+}
+
+/*movable text design*/
+.BelowNav{
+  position:relative;
+  top:60px;
+}
+.h1tag{
+  text-align:center;
+  background-color:orangered;
+}
+
+.MOMO{
+  text-decoration:none;
+  color:green;
+}
+
+.MOMO:hover{
+  color:white;
+}
+
+/*banner image design*/
+.imeg{
+  vertical-align:middle;
+  width:1500px;
+  height:600px;
+
+}
+
+.Myslides{
+  display:none;
+}
+
+.slideBanner{
+  max-width:1500px;
+  position:relative;
+  margin:auto;
+  padding:10px;
+  top:40px;
+}
+
+/*banner image design on smaller screen*/
+@media screen and (max-width:600px){
+  .imeg{
+    width:450px;
+    height:600px;
+  }
+  .Myslides{
+    display:none;
+  }
+  .slidebanner{
+    max-width:450px;
+    position:relative;
+    margin:auto;
+  }
+}
+
+/* previous and next button design*/
+.prev, .next{
+  cursor:pointer;
+  position:absolute;
+  top:50%;
+  width:auto;
+  padding:16px;
+  margin-top:-22px;
+  color:red;
+  font-weight:bold;
+  font-size:18px;
+  transition:2s ease;
+  border:0 3px 3px 0;
+  user-select:none;
+}
+
+.next{
+  right:0;
+  border-radius:3px 0 0 3px;
+}
+
+.prev:hover, .next:hover{
+  background-color: rgba(0,0,0,0.8);
+}
+/*footer design*/
+.LOGOS{
+  position:relative;
+  background-color:orangered;
+  text-align:center;
+  padding:10px;
+  top:155px;
+}
+#face{
+  text-decoration:none;
+  color:blue;
+  background-color:white;
+  font-size:30px;
+}
+#face:hover{
+  background-color:gray;
+}
+#insta{
+  text-decoration:none;
+  color:white;
+  font-size:32px;
+}
+#insta:hover{
+  color:blue;
+}
+#goog{
+  text-decoration:none;
+  background-color:white;
+  color:green;
+  font-size:30px;
+}
+#goog:hover{
+  color:orange;
+}
+#tweet{
+  text-decoration:none;
+  background-color:white;
+  color:blue;
+  font-size:30px;
+}
+#tweet:hover{
+  color:black;
+}
+h5{
+  font-size:20px;
+}
+h5:hover{
+  color:white;
+}
+
+
+/*about section*/
+.image img{
+        position:relative;
+        top:80px;
+        float:left;
+        box-shadow: 0px 10px 50px rgba(0, 0, 0, 0.7);
+    }
+    .momoh2, .traditionh4{
+        position:relative;
+        top:200px;
+        text-align:center;
+    }
+    .aboutp{
+        color:slategray;
+        position:relative;
+        top:200px;
+        text-align:center;
+    }
+    .momoh2{
+        color:orangered;
+    }
+    .traditionh4{
+        color:navy;
+    }
+
+    /*menu design*/
+    .MenuTable{
+      position:relative;
+      top:150px;
+    }
+    .mENUtABLE{
+      width:100%;
+      height:350px;
+      background-color:black;
+    }
+    .OurMenu{
+      text-align:center;
+      font-size:50px;
+      color:red;
+    }
+    .text{
+      color:white;
+      width:50%;
+      text-align:center;
+      font-size:25px;
+    }
+    .emeg img{
+      width:550px;
+      height:300px;
+      padding:40px;
+      position:relative;
+    }
+    .MomoType{
+      color:red;
+      position:relative;
+      cursor:pointer;
+      bottom:40px;
+    }
+    .MomoType:hover{
+      color:white;
+    }
+
+    /*modal css*/
+    body {font-family: Arial, Helvetica, sans-serif;}
+
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content */
+.modal-content {
+  position: relative;
+  background-color:orangered;
+  margin: auto;
+  padding: 0;
+  border: 1px solid #888;
+  width: 80%;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+  -webkit-animation-name: animatetop;
+  -webkit-animation-duration: 0.4s;
+  animation-name: animatetop;
+  animation-duration: 0.4s
+}
+
+/* Add Animation */
+@-webkit-keyframes animatetop {
+  from {top:-300px; opacity:0} 
+  to {top:0; opacity:1}
+}
+
+@keyframes animatetop {
+  from {top:-300px; opacity:0}
+  to {top:0; opacity:1}
+}
+
+/* The Close Button */
+.close {
+  color: white;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.modal-header {
+  padding: 2px 16px;
+  background-color:orangered;
+  color: white;
+  text-align:center;
+}
+
+.modal-body {
+  padding: 2px 16px;
+}
+
+  /*from design*/
+  .FormFill{
+        position:relative;
+        text-align:center;
+        padding:10px;
+        background-color:grey;
+    }
+    .InputName,.InputPeople,.InputDate,.InputMessage{
+        width:50%;
+        padding:20px;
+        border-radius:5px;
+        font-size:15px;
+    }
+    .DirectOrder select{
+      width:54%;
+      padding:20px;
+      border-radius:5px;
+      font-size:15px;
+    }
+    .SendMessage{
+        width:30%;
+        padding:10px;
+        background-color:grey;
+        color:white;
+        border-radius:15px;
+        border-color:gold;
+        font-size:25px;
+    }
+    .DirectOrder option{
+        background-color:orangered;
+        color:white;
+    }
+
+
+</style>
+</head>
+<body onload="UpdateDate();">
+<!--top nav html codes-->
+<div class="topnav" id="MyTopnav">
+  <a href="C:/Users/default.LAPTOP-AR8V7UIC/Desktop/Programming All Till Now/Programming_Chandan/html_css_javascript/HTML_CSS_java_scripts/momosources/cattring.html" class="active">Home</a>
+  <input type="text" name="search" placeholder="Search..." class="find">
+  <a href="C:/Users/default.LAPTOP-AR8V7UIC/Desktop/Programming All Till Now/Programming_Chandan/html_css_javascript/HTML_CSS_java_scripts/momosources/contact.html" class="cont">Contact</a>
+  <a href="C:/Users/default.LAPTOP-AR8V7UIC/Desktop/Programming All Till Now/Programming_Chandan/html_css_javascript/HTML_CSS_java_scripts/momosources/cart.html" class="new">Menu</a>
+  <a href="C:/Users/default.LAPTOP-AR8V7UIC/Desktop/Programming All Till Now/Programming_Chandan/html_css_javascript/HTML_CSS_java_scripts/momosources/momo2.html" class="about">About</a>
+  <img class="cart" id="CARTS" src="momo/cart1.png">
+  <a href="javascript:void(0);" class="icon" onclick="responsive()">
+    <i class="bars">&#9776</i>
+  </a>
+</div>
+
+<!--below top nav html codes-->
+<div class="BelowNav" id="NavBelow">
+  <h1 class="h1tag" id="tagh1">
+    <marquee>
+      <a href="#momo" class="MOMO" id="moMO">MOMO/s</a>
+    </marquee>
+  </h1>
+</div>
+
+<!--Banner html codes-->
+<div class="slideBanner" id="BannerSlide">
+  <div class="Myslides" id="SlidesMe">
+    <img src="momo/m1.jpg" id="emeg" class="imeg">
+  </div>
+
+  <div class="Myslides" id="SlidesMe">
+    <img src="momo/m2.jpg" id="emeg" class="imeg"> 
+  </div>
+
+  <div class="Myslides" id="SlidesMe">
+    <img src="momo/m3.jpg"  id="emeg" class="imeg">
+  </div>
+
+  <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+  <a class="next" onclick="plusSlides(1)">&#10095;</a>
+</div>
+
+<!--about-->
+<div class="image">
+  <img src="momo/m4.jpg">
+  <h2 class="momoh2">ABOUT MOMO</h2>
+  <h4 class="traditionh4">Tradition since 2020</h4>
+  <p class="aboutp">The MO:MO was fouund in Lahan,Raghunathpur,Nepal.
+  </br>
+      This delicious MO:MO is one of best recipie by
+  </br>
+      Mr.Chandan in his only little kitchen where he is
+  </br>
+      Master Chef. 
+  </p>
+</div>
+
+<div class="MenuTable">
+
+  <table class="mENUtABLE" id="tABLEmENU">
+<!--1-->
+    <tr>
+      <td colspan="2" class="OurMenu" id="MenuOur">OUR MENU</td>
+    </tr>
+    <tr>
+      <td class="text" id="TEXT">
+        <span class="MomoType" id="TypeMomo">Fried Momo</span>
+      </br>
+        These crispy Momos attain their lovely texture because
+      </br>
+        they are filled with sauteed vegetables and are then
+      </br>
+        deep fried until they turn to beutiful golden brown.
+      </br>
+        Dip them into some garlic mayonnaise, and you will have
+      </br>
+        a volcano of flavours bursting in your mouth!;
+      </td>
+
+      <td>
+        <div class="emeg" id="EMEG">
+          <img src="momo/m7.jpg">
+        </div>
+      </td>
+    </tr>
+<!--2-->
+    <tr>
+      <td class="text" id="TEXT">
+        <span class="MomoType" id="TypeMomo">Tandoori Momo</span>
+      </br>
+        This Indian version of the Momos is very famous and
+      </br>
+        is loved by almost everyone! How else could you prove
+      </br>
+        "Desiness" if you don't eat everything topped with 
+      </br>
+        gravy, includeing momos! The rich flavour of these
+      </br>
+        momos is sure to tempt you taste buds.
+      </td>
+
+      <td>
+        <div class="emeg" id="EMEG">
+          <img src="momo/m8.jpg">
+        </div>
+      </td>
+    </tr>
+<!--3-->
+    <tr>
+      <td class="text" id="TEXT">
+        <span class="MomoType" id="TypeMomo">Steamed Momos</span>
+      </br>
+        These thickly wrapped Momos are stuffed to the core
+      </br>
+        with Paneer, Vegetables and soya chunks. A filling
+      </br>
+        plate of these Momos is the perfect comfort food for
+      </br>
+        chilly winter evenings. 
+      </td>
+
+      <td>
+        <div class="emeg" id="EMEG">
+          <img src="momo/m9.jpg">
+        </div>
+      </td>
+    </tr>
+<!--4-->
+    <tr>
+      <td class="text" id="TEXT">
+        <span class="MomoType" id="TypeMomo">Chocolate Momos</span>
+      </br>
+        This is for the sweet tooth fanatics out there.
+      </br>
+        If you are confused about whether you should
+      </br>
+        have snacks or sweets, go for some Chocolate Momos
+      </br>
+        because it is a combination of both! The
+      </br>
+        bitter-sweet chocolate filling wrapped by some
+      </br>
+        savoury dough brings instant delight to your mouth!
+      </td>
+
+      <td>
+        <div class="emeg" id="EMEG">
+          <img src="momo/m10.jpg">
+        </div>
+      </td>
+    </tr>
+<!--5-->
+    <tr>
+      <td class="text" id="TEXT">
+        <span class="MomoType" id="TypeMomo">Chilly Momos</span>
+      </br>
+        This plate of Momos is going to set your tongue
+      </br>
+        on fire with its hot and tangy flavour. Soya Sauce,
+      </br>
+        Chilli Sauce and Ketchup make an exquisite fusion
+      </br>
+        as a topping to these Momos and are sure to bring
+      </br>
+        your taste buds alive!
+      </td>
+
+      <td>
+        <div class="emeg" id="EMEG">
+          <img src="momo/m11.jpg">
+        </div>
+      </td>
+    </tr>
+<!--6-->
+    <tr>
+      <td class="text" id="TEXT">
+        <span class="MomoType" id="TypeMomo">Kothe Momos</span>
+      </br>
+        This is the Himalayan take on Momos. These Momos are
+      </br>
+        pan fried and come with a variet of filling to choose
+      </br>
+        from like vegetables, Meat, Pork, etc. One of the key
+      </br>
+        ingredients that make these Momos unique and brings
+      </br>
+        about the flavour is Fried Ginger.
+      </td>
+
+      <td>
+        <div class="emeg" id="EMEG">
+          <img src="momo/m12.jpg">
+        </div>
+      </td>
+    </tr>
+<!--7-->
+    <tr>
+      <td class="text" id="TEXT">
+        <span class="MomoType" id="TypeMomo">Soup Momos</span>
+      </br>
+        brace yourselves, winter is coming! And so is this
+      </br>
+        suggestion to make you evenings warm and cosy. Enjoy
+      </br>
+        you Momos in a big bowl of Hot, Tangy and Spicy Chicken
+      </br>
+        /Vegetable Broth and devour the yummy goodness.
+      </td>
+
+      <td>
+        <div class="emeg" id="EMEG">
+          <img src="momo/m13.jpg">
+        </div>
+      </td>
+    </tr>
+<!--8-->
+    <tr>
+      <td class="text" id="TEXT">
+        <span class="MomoType" id="TypeMomo">Cheese Momos</span>
+      </br>
+        These Creamy, Steamy Momos are filled with Fried
+      </br>
+        Onions, Baby Carrots, Crispy Potatoes and of course
+      </br>
+        Oozy Cheese. This fusion of flavours is sure to 
+      </br>
+        Create wonders in you mouth.
+      </br>
+        Cheese Momo is the best Momo you can have ever experienced!
+      </td>
+
+      <td>
+        <div class="emeg" id="EMEG">
+          <img src="momo/m14.jpg">
+        </div>
+      </td>
+    </tr>
+<!--9-->
+    <tr>
+      <td class="text" id="TEXT">
+        <span class="MomoType" id="TypeMomo">Qeema Momos</span>
+      </br>
+        It is time to treat youself with some warm Momos filled
+      </br>
+        with Marinated Qeems, Peas, Corn and Pepper. Think of it
+      </br>
+        as an International cousin of the Samosa and if that 
+      </br>
+        doesn't make your mouth water then nothing ever will!
+        </td>
+
+      <td>
+        <div class="emeg" id="EMEG">
+          <img src="momo/m15.jpg">
+        </div>
+      </td>
+    </tr>
+<!--10-->
+    <tr>
+      <td class="text" id="TEXT">
+        <span class="MomoType" id="TypeMomo">Chicken Momos</span>
+      </br>
+        The juicy, Tender Chicken and Spices are sure to leave you 
+      </br>
+        drooling as soon as you set your eyes on this masterpiece
+      </br>
+        of a dish! We all know that Chicken is the element that 
+      </br>
+        makes any dish better and always works like magic!
+      </td>
+
+      <td>
+        <div class="emeg" id="EMEG">
+          <img src="momo/m16.jpg">
+        </div>
+      </td>
+    </tr>
+<!--11-->
+    <tr>
+      <td class="text" id="TEXT">
+        <span class="MomoType" id="TypeMomo">Veg Momos</span>
+      </br>
+        These Momos put forward a beutiful blend of
+      </br>
+        fresh Ground Aromatic Spices and Crunchy
+      </br> 
+        Vegetables and they taste best with
+      </br>
+        some fiery Chilli Chutney.
+      </td>
+
+      <td>
+        <div class="emeg" id="EMEG">
+          <img src="momo/m17.jpg">
+        </div>
+      </td>
+    </tr>
+<!--12-->
+    <tr>
+      <td class="text" id="TEXT">
+        <span class="MomoType" id="TypeMomo">Fish Momos</span>
+      </br>
+        This one is sure to get the Bengalis happier than they
+      </br>
+        have ever been! These Momos are unusually light and delicious
+      </br>
+        and have an unusual flavour as compared to the other variety 
+      </br>
+        of Momos. The Fish is marinated in various kinds of spices
+      </br>
+        and used as a filling for these Momos.
+      </td>
+
+      <td>
+        <div class="emeg" id="EMEG">
+          <img src="momo/m18.jpg">
+        </div>
+      </td>
+    </tr>
+<!--13-->
+    <tr>
+      <td class="text" id="TEXT">
+        <span class="MomoType" id="TypeMomo">Green Momos</span>
+      </br>
+        Remember eating Spinach as a kind because Popeye used to
+      </br>
+        do so too? Here is an interesting take on the Momos which
+      </br>
+        will instantly remind you of Popeye's obsession with Spinach! 
+      </br>
+        Spinach is blended with the dough and kneaded together
+      </br>
+        with some water to create the healthy and scrumptions dough.
+      </td>
+
+      <td>
+        <div class="emeg" id="EMEG">
+          <img src="momo/m19.jpg">
+        </div>
+      </td>
+    </tr>
+<!--14-->
+    <tr>
+      <td class="text" id="TEXT">
+        <span class="MomoType" id="TypeMomo">Jhol Momos</span>
+      </br>
+        Jhol translate to liquid/liquid like consistency and hence,
+      </br>
+        these Momos are literally drowned in a bowl of jhol Achar
+      </br>
+        which is a kind of sauce. The jhol Achar has a Hot, Spicy, 
+      </br>
+        and Tangy Caste and is quite thin in consistency.
+      </br>
+        These Momos are a treat to devour in winters.
+      </td>
+
+      <td>
+        <div class="emeg" id="EMEG">
+          <img src="momo/m20.jpg">
+        </div>
+      </td>
+    </tr>
+<!--15-->
+    <tr>
+      <td class="text" id="TEXT">
+        <span class="MomoType" id="TypeMomo">Shogo Shabril Momos</span>
+      </br>
+        Think of Tender, Juicy Meat wrapped in Mashed Potatoes 
+      </br>
+        which is covered by a thick layer of Momo dough. If that
+      </br>
+        doesn't feel like heaven, then I would say there is 
+      </br>
+        something very wrong with you, mate! Try this classic
+      </br>
+        fusion of Potatoes and Meat Momos at least once, and
+      </br>
+        you won't be let down for sure!
+      </td>
+
+      <td>
+        <div class="emeg" id="EMEG">
+          <img src="momo/m21.jpg">
+        </div>
+      </td>
+    </tr>
+
+  </table>
+</div>
+
+<!--Modal deliver cart-->
+
+<!-- The Modal -->
+<div id="myModal" class="modal">
+
+  <!-- Modal content -->
+  <div class="modal-content">
+    <div class="modal-header">
+      <span class="close">&times;</span>
+      <h2>HOME DELIVERY</h2>
+    </div>
+    <div class="modal-body">
+      <form action="/action_page.php" target="_blank" class="FormFill" autocomplete="off">
+        <p>
+            <input class="InputName" id="NameInput" type="text" 
+            placeholder="NAME" required name="NAME">
+        </p>
+        
+        <p>
+            <input class="InputPeople" id="PeopleInput" type="number" 
+            placeholder="How Many People" required name="PEOPLE">
+        </p>
+
+        <p>
+            <input type="text" id="DATE" class="InputDate">
+        </p>
+
+        <div class="DirectOrder">
+            <select name="MenuList">
+                <option id="MenuOrder" class="opt" value="Select From Menu-List" id="orderset" selected>Order From Menu-List</option>
+                <option class="opt" value="Fried Momos">Fried Momos</option>
+                <option class="opt" value="Tandoori Momos">Tandoori Momos</option>
+                <option class="opt" value="Steamed Momos">Steamed Momos</option>
+                <option class="opt" value="Chocolate Momos">Chocolate Momos</option>
+                <option class="opt" value="Chilly Momos">Chilly Momos</option>
+                <option class="opt" value="Kothe Momos">Kothe Momos</option>
+                <option class="opt" value="Soup Momos">Soup Momos</option>
+                <option class="opt" value="Cheese Momos">Cheese Momos</option>
+                <option class="opt" value="Qeema Momos">Qeema Momos</option>
+                <option class="opt" value="Chicken Momos">Chicken Momos</option>
+                <option class="opt" value="Veg Momos">Veg Momos</option>
+                <option class="opt" value="Fish Momos">Fish Momos</option>
+                <option class="opt" value="Jhol Momos">Jhol Momos</option>
+                <option class="opt" value="Shogo Shabril Momos">Shogo Shabril Momos</option>
+                <option class="opt" value="Green Momos">Green Momos</option>
+            </select>
+        </div>
+
+        <p>
+            <input class="InputMessage" type="text"
+            Placeholder="SPECIAL REQUIREMENTS/ HOME DELIVERY/ TABLE BOOKING/ SPECIFY"
+            required name="message" id="default">
+        </p>
+
+        <P>
+            <button class="SendMessage" id="MessageSend"
+             type="submit" onclick=DefaultValue();>SEND MESSAGE</button>
+        </P>
+    </form>
+    </div>
+  </div>
+
+</div>
+
+
+<!--about end-->
+<div class="LOGOS">
+  <h5>Find Us On</h5>
+  <div class="logo">
+    <a href="#facebook" class="fa fa-facebook-official w3-hover-opacity" id="face"></a>
+    <a href="#instagram" class="fa fa-instagram w3-hover-opacity" id="insta"></a>
+    <a href="#google" class="fa fa-google w3-hover-opacity" id="goog"></a>
+    <a href="#twitter" class="fa fa-twitter w3-hover-opacity" id="tweet"></a>
+  </div>
+</div>
+
+<script src="cattrings.js"></script>
+
+</body>
+</html>

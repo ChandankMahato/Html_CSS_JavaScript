@@ -1,0 +1,129 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style type=text/css media="all">
+    .container{
+        border:5px solid goldenrod;
+        background-color:red;
+        width:75%;
+        margin:0 auto;
+        text-align:center;
+        padding:5px;
+        border-radius:15px;
+        color:white;
+    }
+    .flex-box-bj-row-1, .flex-box-bj-row-2, .flex-box-bj-row-3{
+        display:flex;
+        flex-wrap:wrap;
+        flex-direction:row;
+        border:2px solid gold;
+        padding:10px;
+        justify-content:space-around;
+        border-radius:5px;
+    }
+    .flex-box-bj-row-1{
+        background-color:gold;
+    }
+    .flex-box-bj-row-1 div{
+        background:url('https://www.photos-public-domain.com/wp-content/uploads/2012/05/green-paper-texture.jpg');
+    }
+    .flex-box-bj-row-2, .flex-box-bj-row-3{
+        background:url('https://www.photos-public-domain.com/wp-content/uploads/2012/05/green-paper-texture.jpg');
+    }
+    .flex-box-bj-row-1 div{
+        padding:10px;
+        flex:1;
+        height:400px;
+    }
+    .flex-box-bj-row-1 img{
+        width:20%;
+        padding:10px;
+        height:100px;
+    }
+    .container h1{
+        color:black;
+    }
+    .btn-1, .btn-2, .btn-3{
+        padding:10px;
+        border-radius:10px;
+        width:100px;
+    }
+    .btn-1, .btn-3:hover{
+        background-color:green;
+    }
+    .btn-2{
+        background-color:yellow;
+    }
+    .btn-3, .btn-1:hover{
+        background-color:red;
+    }
+    .btn-2:hover{
+        background-color:blue;
+    }
+    .flex-box-bj-row-2 input:focus{
+        border-color:gold;
+        box-shadow:0px 30px 30px gold;
+    }
+    .table, th, td{
+        padding:5px;
+        text-align:center;
+    }
+    .table th, .table td{
+        color:white;
+        padding:5px;
+        font-size:15px; 
+    }
+    .table{
+        background-color:maroon;
+        border:1px solid black;
+    }
+    .table{
+        box-shadow:0px 10px 10px rgba(0,0,0.7);
+    }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>BLACK JACK GAME</h1>
+        <h2 id="result"><span>Let's Play</span></h2>
+        
+        <div class="flex-box-bj-row-1" id="challenge-1">
+            <div id="your_box">
+                <h2>YOU:<span id="your_result">0</span></h2>
+            </div>
+
+            <div id="bot_box">
+                <h2>DEALER:<span id="bot_result">0</span></h2>
+            </div>
+        </div>
+
+        <div class="flex-box-bj-row-2" id="challenge-2">
+            <div id="button">
+                <input class="btn-1" id="btn-1-bj" type="button" value="HIT">
+                <input class="btn-2" id="btn-2-bj" type="button" value="STAND">
+                <input class="btn-3" id="btn-3-bj" type="button" value="DEAL">
+            </div>
+        </div>
+
+        <div class="flex-box-bj-row-3" id="challenge-3">
+            <table class="table">
+                <tr>
+                    <th>WINS</th>
+                    <th>LOSES</th>
+                    <th>DRAWS</th>
+                </tr>
+
+                <tr>
+                    <td><span id="wins_data">0</span></td>
+                    <td><span id="loses_data">0</span></td>
+                    <td><span id="draws_data">0</span></td>
+                </tr>
+            </table>
+        </div>
+    </div>
+    
+    <script src="game_2.js"></script>
+</body>
+</html>

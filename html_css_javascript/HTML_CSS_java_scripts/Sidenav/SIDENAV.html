@@ -1,0 +1,90 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SIDENAV</title>
+
+    <style type="text/css" media="all">
+    body{
+        font-family:fantasy;
+        background-color:red;
+    }
+    h1,p,span{
+        color:white;
+    }
+
+    .sidenav{
+        background-color:black;
+        height:100%;
+        width:0%;
+        position:fixed;
+        z-index:1;
+        top:0;
+        left:0;
+        transition:0.5s;/*transition effect to slide in the sidenav*/
+        padding-top:60px;
+        overflow-x:hidden;/*disable horinzontal scroll*/
+    }
+
+    .sidenav a{
+        padding:8px 8px 8px 32px;
+        text-decoration:none;
+        color:white;
+        display:block;
+        transition:0.5s;/*link changes their colors; within 2s*/
+    }
+    .sidenav a:hover{
+        color:gold;
+    }
+    
+    .sidenav .closebtn{
+        position:absolute;
+        color:red;
+        top:0;
+        font-size:36px;
+        margin-left:50px;
+        right:10px;
+    }
+    /*style page content - using this to push the page content
+    to the right when the side navigation is opened*/
+    #main{
+        transition:margin-left 2s;
+        padding:20px;
+    }
+
+    /*on smaller screen,where height is less than 450px, change the
+    style of the sidenav (less padding and a smaller font size)*/
+    @media screen and (max-height:45px){
+        .sidenav{padding-top:15px;}
+        .sidenav a{font-size:18px;}
+    }
+
+    </style>
+</head>
+<body>
+    <div class="sideNav" id="Navside">
+        <a href="javascript:void(0)" class="closebtn"
+        onclick="closeNav();">&times;</a>
+        <a href="#">About</a>
+        <a href="#">Services</a>
+        <a href="#">Clients</a>
+        <a href="#">Contacts</a>
+    </div>
+    <h1>ANIMATED SIDENAV EXAMPLE</h1>
+    <p>CLICK ON THE ELEMENT BELOW
+         TO OPEN THE SIDE NAVIGATION MENU.</p>
+    <span style="font-size:30px; cursor:pointer" 
+    onclick="openNav()">&#9776;OPEN</span>
+
+    <script>
+        /*Setting the width of the side navigation to 250px;*/
+        function openNav(){
+            document.getElementById("Navside").style.width = "250px";
+        }
+
+        /*Setting the width of the side nanvigation to 0*/
+        function closeNav(){
+            document.getElementById("Navside").style.width ="0";
+        }
+    </script>
+</html>

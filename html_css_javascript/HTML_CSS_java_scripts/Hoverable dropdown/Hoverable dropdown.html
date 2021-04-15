@@ -1,0 +1,62 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HOVER</title>
+    <style type=text/css medial=all>
+    .top{
+        background-color:red;
+    }
+    .dropbtn{
+        background-color:#4CAF50;
+        color:white;
+        padding:16px;
+        font-size:16px;
+        border-radius:10px;
+        border:none;
+    }
+
+    .dropdown{
+        position:relative;
+        display:inline-block;
+    }
+
+    .dropdown-content{
+        display:none;
+        position:absolute;
+        background-color:#f1f1f1;
+        min-width:120px;
+        box-shadow:0px 8px 16px 0px rgba(0,0,0,0.2);
+        z-index:1;
+    }
+    .dropdown-content a{
+        color:black;
+        padding:12px 16px;
+        text-decoration:none;
+        display:block;
+    }
+    .dropdown-content a:hover{background-color:#ddd;}
+    
+    .dropdown:hover .dropdown-content {display:block;}
+
+    .dropdown:hover .dropbtn {background-color:#3e8e41;}
+    
+    </style>
+</head>
+<body class="top">
+    
+    <h1 style="color:white">Hoverable Dropdown</h1>
+    <p style="color:white">MOVE THE MOUSE OVER THE BUTTON 
+       TO OPEN THE DROWDWON MENU.</p>
+    <div class="dropdown">
+        <button class="dropbtn">Dropdown</button>
+        <div class="dropdown-content">
+            <a href="https://duckduckgo.com/?q=sound+of+isha&t=ffab&iar=videos&iax=videos&ia=videos" target="new">Songs</a>
+            <a href="https://duckduckgo.com/?t=ffab&q=natures+image&ia=images&iax=images" target="new">Images</a>
+            <a href="https://www.google.com/" target="new">Search</a>
+        </div>
+    </div>
+    
+    <script src="login.js"></script>
+</body>
+</html>

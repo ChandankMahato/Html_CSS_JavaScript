@@ -1,0 +1,1 @@
+ddg_spice_amazon({"reviews":null,"more_at":"https://amazon.com/s/?tag=duckduckgo-d-20&url=search-alias%3Daps&field-keywords=mobile","stars":null,"next":"","tag":"duckduckgo-ffab-20","source":"Amazon","results":[]})

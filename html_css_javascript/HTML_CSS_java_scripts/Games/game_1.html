@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>challenge</title>
+    <style type=text/css media="all">
+    .btn-primary, .btn-third, .btn-secondary, .btn-5, .btn-6, .btn-7{
+        background-color:blue;
+        padding:5px;
+        border-radius:10px;
+    }
+    .btn-primary:hover, .btn-secondary:hover, .btn-third:hover, .btn-7, .btn-1:hover, .btn-2:hover, .btn-3:hover, .btn-5:hover, .btn-6:hover{
+        background-color:green;
+    }
+    .btn-secondary, .btn-5, .btn-7:hover{
+        background-color:red;
+    }
+    .btn-third{
+        background-color:gray;
+    }
+    .container-1, .container-2, .container-3, .container-4, .container-5{
+    border:1px solid black;
+    background:lightgoldenrodyellow;
+    width:75%;
+    margin:0 auto;
+    text-align:center;
+    }
+    .flex-box-container-1, .flex-box-container-2, .flex-box-raps, .flex-box-ccb, 
+    .flex-box-bj-row-1, .flex-box-bj-row-2, .flex-box-bj-row-3{
+        display:flex;
+        background-color:whitesmoke;
+        border:1px solid black;
+        padding:10px;
+        flex-wrap:wrap;
+        flex-direction:row;
+        justify-content:space-around;
+    }
+    .flex-box-bj-row-1, .flex-box-bj-row-2, .flex-box-bj-row-3{
+        background: url('https://media.istockphoto.com/photos/green-poker-table-picture-id502000289?k=6&m=502000289&s=612x612&w=0&h=JGO93i8O4N7XJdk_oYYh0YQJbVCuPDxGKmwtTaOaKEs=');
+        color:#ffffff;
+    }
+
+    .flex-box-bj-row-1 div{
+        border:1px solid black;
+        padding:3px;
+        height:700px;
+        text-align:center;
+        flex:1;
+    }
+    .flex-box-bj-row-1 img{
+        width:25%;
+        padding:10px;
+    }
+    .flex-box-bj-row-2 div{
+        border:1px solid black;
+        padding:10px;
+    }
+    .flex-box-bj-row-2 input:focus{
+        border-color:orangered;
+        box-shadow:0px 50px 50px orangered;
+    }
+    .flex-box-bj-row-2 input{
+        color:white;
+        font-size:25px;
+    }
+    .flex-box-container-1 div{
+        display:flex;
+        background-color:snow;
+        padding:10px;
+        border:1px solid black;
+        align-items:center;
+    }
+    .flex-box-container-2 img{
+        width:25%;
+        box-shadow: 0px 10px 50px rgba(0, 0, 0, 0.7);
+    }
+    .flex-box-raps img{
+        height:150px;
+        width:150px;
+    }
+    .flex-box-raps img:hover{
+        box-shadow:0px 10px 50px red;
+    }
+    .btn-1, .btn-2, .btn-3, .btn-4, .btn-5, .btn-6, .btn-7{
+        padding:15px;
+        border-radius:10px;
+        width:100px;
+        box-shadow: 0px 10px 50px rgba(0, 0, 0, 0.7);
+    }
+    .btn-1{
+        background-color:orange;
+    }
+    .btn-2{
+        background-color:tomato;
+    }
+    .btn-3, .btn-6{
+        background-color:yellow;
+    }
+    .btn-4{
+        background-color:green;
+    }
+    .design select{
+        font-size:20px;
+        padding:10px;
+        border:1px #ccc;
+        position:relative;
+        background-color:slategrey;
+        color:white;
+        box-shadow: 0px 10px 50px rgba(0, 0, 0, 0.7);
+    }
+    .design select:hover{
+        color:black;
+    }
+    .Table, th, td{
+        padding:5px;
+        border-radius:20px;
+    }
+    .Table th, .Table td{
+        color:white;
+        font-size:25px;
+        padding:10px;
+    }
+    .Table{
+        background-color:maroon;
+        box-shadow: 0px 10px 50px rgba(0, 0, 0, 0.7);
+    }
+    
+    </style>
+
+</head>
+
+<body>
+    <div class="container-1">
+        <h2>Challenge 1:Your Age in Days</h2>
+            <div class="flex-box-container-1">
+                <button class="btn-primary" onclick="ageInDays()">Click Me</button>
+                <button class="btn-secondary" onclick="reset()">reset</button>
+            </div>
+            <div class="flex-box-container-1">
+                <div id="flex-box-result"></div>
+            </div>
+    </div>
+
+<div class="container-2">
+    <h2>Challenge 2:Cat Generator</h2>
+    <button class="btn-third" id="cat-generator" onclick="generatecat()">Generate Cat</button>
+    <div class="flex-box-container-2" id="flex-cat-gen"></div>
+</div> 
+
+    <div class="container-3">
+        <h2>Challenge 3:Rock, Paper, Scissors</h2>
+        <div class="flex-box-raps" id="Challenge-3">
+            <img id=rock src="https://cdn1.thr.com/sites/default/files/2012/05/rock_a_0.jpg" onclick="rpsGame(this)">
+            <img id=paper src="http://images.clipartpanda.com/paper-clipart-nexxuz-Loose-Leaf-Paper.png" onclick="rpsGame(this)">
+            <img id=scissors src="https://thumbs.dreamstime.com/b/female-hand-sign-victor-color-flat-illustration-isolate-white-background-web-83128345.jpg" onclick="rpsGame(this)">
+        </div>
+    </div>
+
+    <div class="container-4">
+        <h2 id="change-my-color">Challenge 4:CHANGE THE COLOR OF ALL BUTTONS!</h2>
+        <div class="flex-box-ccb" id="challenge-4">
+            <form action="" class="design">
+                <select name="dropdown" id="background" onchange="buttonColorChange(this)">
+                    <option value="random">Random</option>
+                    <option value="red">Red</option>
+                    <option value="green">Green</option>
+                    <option value="yellow">Yellow</option>
+                    <option value="gray">Gray</option>
+                    <option value="tomato">Tomato</option>
+                    <option value="orange">Orange</option>
+                    <option value="blue">Blue</option>
+                    <option value="reset">Reset</option>
+                </select>
+            </form>
+
+            <button class="btn-1">Wee!</button>
+            <button class="btn-2">Yahoo!</button>
+            <button class="btn-3">Google!</button>
+            <button class="btn-4">Facebook</button>
+
+        </div>
+    </div>
+
+    <div class="container-5">
+        <h2>Challenge 5:Blackjack</h2>
+        <h3 id="result"><span>Let's Play</span></h3>
+        <div class="flex-box-bj-row-1" id="challenge-5-1">
+            <div id="your-box">
+                <h2>You: <span id="your_result">0</span></h2>
+            </div>
+
+            <div id="bot-box">
+                <h2>Dealer: <span id="bot_result">0</span></h2>
+            </div>
+        </div>
+
+        <div class="flex-box-bj-row-2" id="challenge-5-2">
+            <div id="buttons">
+                <input class="btn-5" id="btn-5-bj" type="button" value="HIT">
+                <input class="btn-6" id="btn-6-bj" type="button" value="STAND">
+                <input class="btn-7" id="btn-7-bj" type="button" value="DEAL">
+            </div>
+        </div>
+
+        <div class="flex-box-bj-row-3" id="challenge-5-3">
+            <table class="Table">
+                <tr>
+                    <th>Wins</th>
+                    <th>Loses</th>
+                    <th>Draws</th>
+                </tr>
+
+                <tr>
+                    <td><span id="Wins">0</span></td>
+                    <td><span id="Loses">0</span></td>
+                    <td><span id="Draws">0</span></td>
+                </tr>
+            </table>
+        </div>
+    </div>
+<script src="game_1.js"></script>
+</body>
+</html>

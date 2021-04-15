@@ -1,0 +1,328 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact</title>
+    <style type="text/css" media="all">
+    body{
+        background-color:grey;
+    }
+
+    /* nav bar design */
+.topnav {
+  overflow: hidden;
+  background-color:orangered;
+  position:fixed;
+  top:0;
+  z-index:9999;
+  width:100%;
+  left:0px;
+}
+
+.new,.cont,.about{
+  float: right;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+.cart{
+  position:relative;
+  float:right;
+  text-align:center;
+  width:35px;
+  height:35px;
+  top:4px;
+  cursor:pointer;
+  padding:3px;
+}
+.cart:hover{
+  background-color:black;
+}
+
+
+.topnav a.active{
+    top:13px;
+    position:relative;
+}
+
+.active{
+    top:12px;
+    padding:14px 16px;
+    font-size:17px;
+    text-decoration:none;
+    color:white;
+}
+
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+.topnav .icon {
+  display: none;
+  color:white;
+  padding:10px;
+  text-decoration:none;
+}
+
+/*nav bar screen size manangement */
+@media screen and (max-width: 600px) {
+  .topnav a:not(:first-child) {
+    display: none;
+  }
+  .topnav a.icon {
+    float: right;
+    display: block;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .topnav.respo {
+    position: relative;
+  }
+  .topnav.respo .icon {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+  .topnav.respo a {
+    float: none;
+    display: block;
+    text-align: left;
+    padding:20px;
+  }
+  .topnav a:hover{
+      background-color:white;
+  }
+}
+
+/*search box design*/
+.find{
+    position:relative;
+    width:130px;
+    box-sizing:border-box;
+    border:2px solid #ccc;
+    border-radius:4px;
+    font-size:16px;
+    background-color:white;
+    background-position:10px 10px;
+    padding:5px 10px 5px 10px;
+    top:7px;
+    -webkit-transition:width 0.4s ease-in-out;
+    transition:width 1s ease-in-out;
+}
+
+input[type=text]:focus{
+    width:50%;
+}
+
+
+/*movable text design*/
+.BelowNav{
+  position:relative;
+  width:100%;
+  top:60px;
+}
+.h1tag{
+  text-align:center;
+  background-color:orangered;
+}
+
+.MOMO{
+  text-decoration:none;
+  color:green;
+}
+
+.MOMO:hover{
+  color:white;
+}
+
+
+/*image location design*/
+    .ImageLocation{
+        width:90%;
+        height:500px;
+        position:relative;
+        left:5%;
+        top:50px;
+    }
+    .ContactTitle{
+        text-align:center;
+        color:white;
+        font-size:50px;
+        position:relative;
+        top:50px;
+    }
+    .ContactNumber{
+        text-align:center;
+        position:relative;
+        top:50px;
+        color:white;
+        font-size:15px;
+    }
+    .number{
+        font-size:25px;
+        color:red;
+    }
+    .NumberBack{
+        background-color:white;
+        position:relative;
+        top:50px;
+        padding:5px;
+    }
+    .ServiceAvailabel{
+        color:white;
+        font-size:30px;
+        text-align:center;
+        position:relative;
+        top:70px;
+    }
+    .ReserveTable{
+        color:white;
+        font-size:20px;
+        text-align:center;
+        position:relative;
+        top:80px;
+    }
+    .ReservE{
+        color:white;
+        background-color:orangered;
+        position:relative;
+    }
+    /*from design*/
+    .FormFill{
+        position:relative;
+        top:100px;
+        text-align:center;
+        padding:10px;
+    }
+    .InputName,.InputPeople,.InputDate,.InputMessage,.DirectOrder select{
+        width:50%;
+        padding:20px;
+        border-radius:5px;
+        font-size:15px;
+    }
+    .SendMessage{
+        width:30%;
+        padding:10px;
+        background-color:grey;
+        color:white;
+        border-radius:15px;
+        border-color:gold;
+        font-size:25px;
+    }
+    .DirectOrder option{
+        background-color:orangered;
+        color:white;
+    }
+
+    </style>
+</head>
+<body onload="UpdateDate();">
+        <!--top nav html codes-->
+    <div class="topnav" id="MyTopnav">
+        <a href="C:/Users/default.LAPTOP-AR8V7UIC/Desktop/Programming All Till Now/Programming_Chandan/html_css_javascript/HTML_CSS_java_scripts/momosources/cattring.html" class="active">Home</a>
+        <input type="text" name="search" placeholder="Search..." class="find">
+        <a href="C:/Users/default.LAPTOP-AR8V7UIC/Desktop/Programming All Till Now/Programming_Chandan/html_css_javascript/HTML_CSS_java_scripts/momosources/contact.html" class="cont">Contact</a>
+        <a href="C:/Users/default.LAPTOP-AR8V7UIC/Desktop/Programming All Till Now/Programming_Chandan/html_css_javascript/HTML_CSS_java_scripts/momosources/cart.html" class="new">Menu</a>
+        <a href="C:/Users/default.LAPTOP-AR8V7UIC/Desktop/Programming All Till Now/Programming_Chandan/html_css_javascript/HTML_CSS_java_scripts/momosources/momo2.html" class="about">About</a>
+        <img class="cart" id="CARTS" src="momo/cart1.png">
+        <a href="javascript:void(0);" class="icon" onclick="responsive()">
+        <i class="bars">&#9776</i>
+        </a>
+    </div>
+
+        <!--below top nav html codes-->
+    <div class="BelowNav" id="NavBelow">
+        <h1 class="h1tag" id="tagh1">
+        <marquee>
+            <a href="#momo" class="MOMO" id="moMO">MOMO/s</a>
+        </marquee>
+        </h1>
+    </div>
+
+    <!--Image of location/map-->
+    <img src="momo/m22.jpg" class="ImageLocation">
+
+    <!--Contact-->
+    <div class="ShopContact" id="ContactShop">
+        <h1 class="ContactTitle">Contact</h1>
+        <p class="ContactNumber">
+            FIND US AT SOME ADDRESS AT SHOWN PLACE OR CALL US AT
+            </br>
+            <div class="NumberBack">
+               <marquee class="number" id="NUMBER">9811771892</marquee>
+            </div>
+        </p>
+
+        <p class="ServiceAvailabel">
+            WE OFFER FULL-SERVICE FAST-FOOD FOR ANY EVENT.
+            </br>
+            WE UNDERSTAND YOUR NEEDS AND WE WILL SERVE YOU
+            </br>
+            TO SATISFY YOUR DESIRE OF FAST-FOOD,
+            </br>
+            BOTH LOOK AND TASTE!
+        </p>
+
+        <p class="ReserveTable">
+            <span class="ReservE">RESERVE</span>
+            </br>
+            A TABLE, ASK FOR TODAY'S SPECIAL OR
+            JUST SEND US A MESSAGE:
+        </p>
+
+        <form action="/action_page.php" target="_blank" class="FormFill" autocomplete="off">
+            <p>
+                <input class="InputName" type="text" 
+                placeholder="NAME" required name="NAME">
+            </p>
+            
+            <p>
+                <input class="InputPeople" type="number" 
+                placeholder="How Many People" required name="PEOPLE">
+            </p>
+
+            <p>
+                <input type="text" id="DATE" class="InputDate">
+            </p>
+
+            <div class="DirectOrder">
+                <select name="MenuList">
+                    <option class="opt" value="Select From Menu-List" id="orderset" selected>Order From Menu-List</option>
+                    <option class="opt" value="Fried Momos">Fried Momos</option>
+                    <option class="opt" value="Tandoori Momos">Tandoori Momos</option>
+                    <option class="opt" value="Steamed Momos">Steamed Momos</option>
+                    <option class="opt" value="Chocolate Momos">Chocolate Momos</option>
+                    <option class="opt" value="Chilly Momos">Chilly Momos</option>
+                    <option class="opt" value="Kothe Momos">Kothe Momos</option>
+                    <option class="opt" value="Soup Momos">Soup Momos</option>
+                    <option class="opt" value="Cheese Momos">Cheese Momos</option>
+                    <option class="opt" value="Qeema Momos">Qeema Momos</option>
+                    <option class="opt" value="Chicken Momos">Chicken Momos</option>
+                    <option class="opt" value="Veg Momos">Veg Momos</option>
+                    <option class="opt" value="Fish Momos">Fish Momos</option>
+                    <option class="opt" value="Jhol Momos">Jhol Momos</option>
+                    <option class="opt" value="Shogo Shabril Momos">Shogo Shabril Momos</option>
+                    <option class="opt" value="Green Momos">Green Momos</option>
+                </select>
+            </div>
+
+            <p>
+                <input class="InputMessage" type="text"
+                Placeholder="SPECIAL REQUIREMENTS/ HOME DELIVERY/ TABLE BOOKING/ SPECIFY"
+                required name="message" id="default">
+            </p>
+
+            <P>
+                <button class="SendMessage" id="MessageSend"
+                 type="submit" onclick=DefaultValue();>SEND MESSAGE</button>
+            </P>
+        </form>
+    </div>
+    <script src="ContacT.js"></script>
+</body>
+</html>
